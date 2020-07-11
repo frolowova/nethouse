@@ -112,8 +112,6 @@ function validFIO() {
     inpFIO.value = inpFIO.value.replace(/^\s/, ''); // Удаляем первый пробел
     inpFIO.value = inpFIO.value.replace('  ', ' '); // Удаляем лишние пробелы
 
-    // // Разрешённый формат записи ФИО
-    // let fio = inpFIO.value.match(/^[А-ЯЁ][а-яё]{1,}([-][А-ЯЁ][а-яё]{1,})?\s[А-ЯЁ][а-яё]{1,}([-][А-ЯЁ][а-яё]{1,})?\s[А-ЯЁ][а-яё]{1,}([-][А-ЯЁ][а-яё]{1,})?$/);
     let fioArr = inpFIO.value.split(" ")
 
     if (fioArr.length <= 3) {
@@ -121,7 +119,6 @@ function validFIO() {
             mess.innerHTML = "Введите полностью Имя Фамилия Отчество"
             if (!allowSym) mess.innerHTML = 'Вводить можно только русские буквы и знак "-"'
         }
-        // else if (fioArr[2].length > 1) {
         // Если введённые данные отвечают нашему стандарту
         else if (/^[А-ЯЁ][а-яё]{1,}([-][А-ЯЁ][а-яё]{1,})?\s[А-ЯЁ][а-яё]{1,}([-][А-ЯЁ][а-яё]{1,})?\s[А-ЯЁ][а-яё]{1,}([-][А-ЯЁ][а-яё]{1,})?$/.test(fioArr.join(" "))) {
             mess.innerHTML = ""
@@ -184,69 +181,3 @@ function validEmail() {
 
     return false; //возвращаем false за исключением успешной валидации
 }
-
-
-
-// function sum() {
-//     let bool = arguments[0]
-//     // let sum = 0;
-//     // let arr = []
-//     // for (let i = arguments[0]; i <= arguments[1]; i += arguments[2]) {
-//     //     arr.push(i)
-//     //     sum += i
-//     // }
-//     // return sum
-
-//     if (bool) {
-//         for (let i = 1; i < arguments.length; i++) {
-//             sum += arguments[i]
-//         }
-//     }
-//     return sum
-// }
-
-
-
-/*
-Напишите такую функцию sum, чтобы:
-console.log(sum(2,3)); // Outputs 5
-console.log(sum(2)(3));// Outputs 5
-Может стоит сделать проверку: Если аргумент 1, то плюсуем и вызываем себя же
-Если аргументов больше 1, то складываем сумму аргументов
-*/
-// function sum(a) {
-//     let summ = 0;
-
-//     //Если значений нет, то вернуть что-то, ошибку или 0 или ещё что-то. 
-//     if (!arguments.length) return 0
-
-//     // Если значение одно, то запускаем цепочку вызова функции в которой суммируем
-//     if (arguments.length == 1) {
-//         summ += a;
-//         // Функция возвращает функцию
-//         const funcSumm = a => {
-//             summ += a;
-//             return funcSumm;
-//         }
-//         // Сериализуем (преобразуем) значения для вывода
-//         funcSumm.toString = () => summ;
-//         return funcSumm;
-
-//     } else if (arguments.length > 1) {
-//         // Если значений несколько, то просто их суммируем
-//         for (let i = 0; i < arguments.length; i++) {
-//             summ += arguments[i]
-//         }
-//         return summ
-//     }
-// }
-
-// console.log("1: " + sum(2, 3))
-// console.log("2: " + sum(2)(3))
-// console.log("3: " + sum())
-// console.log("4: " + sum(7))
-
-// ===============================
-// ===============================
-// ===============================
-
