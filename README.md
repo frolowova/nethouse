@@ -1,4 +1,4 @@
-Работу страницы можно посмотреть на https://frolowova.github.io/nethouse-page/
+Работу страницы можно посмотреть на https://frolowova.github.io/nethouse/
 
 Реализовано:
 Страничка с формой и валидацией на 3 поля.
